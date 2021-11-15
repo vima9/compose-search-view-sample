@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ComposeSearchViewSample</string>
+    <string name="icn_search_view_demo_app_bar_search">Search Users</string>
+
+    <string name="icn_search_back_content_description">Exit Search View</string>
+
+    <string name="icn_search_clear_content_description">Clear Search</string>
+
+
+    <string name="icn_user_detail_app_bar_back_button">Navigate back</string>
+</resources>
