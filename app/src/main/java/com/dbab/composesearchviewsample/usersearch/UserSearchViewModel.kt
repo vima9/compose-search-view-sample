@@ -40,6 +40,16 @@ class UserSearchViewModel @Inject constructor(private val userRepository: UserRe
         retrieveUsers()
     }
 
+    fun retrieveUsers() {
+        val users = userRepository.getUsers()
+
+        if (users != null) {
+            allUsers.addAll(users)
+        }
+
+    }
+
+
 
     fun onSearchTextChanged(changedSearchText: String) {
         searchText.value = changedSearchText
@@ -47,7 +57,6 @@ class UserSearchViewModel @Inject constructor(private val userRepository: UserRe
             matchedUsers.value = arrayListOf()
             return
         }
-
         val usersFromSearch = allUsers.filter { x ->
             x.username.contains(changedSearchText, true) ||
                     x.email.contains(changedSearchText, true) || x.name.contains(
@@ -55,11 +64,6 @@ class UserSearchViewModel @Inject constructor(private val userRepository: UserRe
                 true
             )
         }
-
-        Log.d(
-            TAG,
-            "Search text: $changedSearchText, total matches found: ${usersFromSearch.size}"
-        )
         matchedUsers.value = usersFromSearch
     }
 
@@ -69,14 +73,6 @@ class UserSearchViewModel @Inject constructor(private val userRepository: UserRe
     }
 
 
-    fun retrieveUsers() {
-        val users = userRepository.getUsers()
-
-        if (users != null) {
-            allUsers.addAll(users)
-        }
-
-    }
 
 }
 

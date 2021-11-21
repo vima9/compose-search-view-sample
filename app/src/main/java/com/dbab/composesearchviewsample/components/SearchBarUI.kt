@@ -46,7 +46,7 @@ fun SearchBarUI(
                 .fillMaxSize()
         ) {
 
-            SearchBarBox(
+            SearchBar(
                 searchText,
                 placeholderText,
                 onSearchTextChanged,
@@ -69,11 +69,10 @@ fun SearchBarUI(
 }
 
 
-
 @ExperimentalAnimationApi
 @ExperimentalComposeUiApi
 @Composable
-fun SearchBarBox(
+fun SearchBar(
     searchText: String,
     placeholderText: String = "",
     onSearchTextChanged: (String) -> Unit = {},
@@ -150,7 +149,6 @@ fun SearchBarBox(
 
 @Composable
 fun NoSearchResults() {
-
 
     Column(
         modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.Center,

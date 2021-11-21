@@ -80,7 +80,6 @@ fun Users(users: List<User>?, onClick: (User) -> Unit) {
 
 @Composable
 fun UserRow(user: User, onClick: () -> Unit) {
-
     Column(modifier = Modifier
         .fillMaxWidth()
         .padding(8.dp)
@@ -89,7 +88,5 @@ fun UserRow(user: User, onClick: () -> Unit) {
         Spacer(modifier = Modifier.height(2.dp))
         Text(user.email)
         Spacer(modifier = Modifier.height(4.dp))
-
     }
-
 }
